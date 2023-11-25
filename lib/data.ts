@@ -8,7 +8,7 @@ import wordanalyticsImg from '@/public/wordanalytics.png';
 
 export const links = [
   {
-    name: 'About',
+    name: 'Home',
     name_EN: 'Home',
     name_Fr: 'Accueil',
     hash: '#home',

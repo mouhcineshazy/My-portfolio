@@ -1,13 +1,12 @@
 'use client';
 
 import { useActiveSectionContext } from '@/context/active-section';
-import { useLanguageSwitchContext } from '@/context/lang-switch';
 import { TranslationKeys } from '@/lang/constants';
 import { useSectionInView } from '@/lib/hooks';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
-import React, { Fragment } from 'react';
+import React from 'react';
 import { BsArrowRight, BsLinkedin } from 'react-icons/bs';
 import { FaGithubSquare } from 'react-icons/fa';
 import { HiDownload } from 'react-icons/hi';
