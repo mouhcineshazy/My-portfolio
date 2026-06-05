@@ -32,15 +32,11 @@ export const useLanguageSwitchContext = () => {
 
 export default function LangSwitchProvider({ children }: PropsWithChildren) {
   const [locale, setLocale] = useState<SupportedLocales>(() => {
+    if (typeof window === 'undefined') return defaultLanguage as SupportedLocales;
     let lang = window.localStorage.getItem('language');
     if (!lang) {
       const language = navigator.language.toLowerCase().split(/[_-]+/)[0];
-      console.log({ language });
-      if (Object.keys(locales).includes(language.toLowerCase())) {
-        lang = language;
-      } else {
-        lang = defaultLanguage;
-      }
+      lang = Object.keys(locales).includes(language) ? language : defaultLanguage;
     }
     return lang as SupportedLocales;
   });
