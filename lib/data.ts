@@ -1,10 +1,7 @@
 import React from 'react';
 import { CgWorkAlt } from 'react-icons/cg';
-import { FaReact } from 'react-icons/fa';
 import { LuGraduationCap } from 'react-icons/lu';
-import corpcommentImg from '@/public/corpcomment.png';
-import rmtdevImg from '@/public/rmtdev.png';
-import wordanalyticsImg from '@/public/wordanalytics.png';
+import type { ProjectData } from './types';
 
 export const links = [
   {
@@ -47,73 +44,96 @@ export const links = [
 
 export const experiencesData = [
   {
-    title: 'Graduated bootcamp',
-    location: 'Miami, FL',
+    title: "Master's in Computer Science & Engineering",
+    location: 'Télécom SudParis (Grande École) — Paris, France',
     description:
-      'I graduated after 6 months of studying. I immediately found a job as a front-end developer.',
+      'Engineering degree with a focus on software architecture, distributed systems, and applied mathematics.',
     icon: React.createElement(LuGraduationCap),
-    date: '2019',
+    date: '2014 – 2016',
   },
   {
-    title: 'Front-End Developer',
-    location: 'Orlando, FL',
+    title: 'Junior Full Stack Consultant',
+    location: 'Capgemini — Paris, France',
     description:
-      'I worked as a front-end developer for 2 years in 1 job and 1 year in another job. I also upskilled to the full stack.',
+      'Delivered Java and Angular full-stack applications for Orange Bank and Crédit Agricole Insurance across multiple concurrent Agile client engagements.',
     icon: React.createElement(CgWorkAlt),
-    date: '2019 - 2021',
+    date: 'Jun 2016 – Jul 2018',
   },
   {
-    title: 'Full-Stack Developer',
-    location: 'Houston, TX',
+    title: 'Full Stack Engineer',
+    location: 'Natixis — Remote',
     description:
-      "I'm now a full-stack developer working as a freelancer. My stack includes React, Next.js, TypeScript, Tailwind, Prisma and MongoDB. I'm open to full-time opportunities.",
-    icon: React.createElement(FaReact),
-    date: '2021 - present',
+      'Modernised a personal loan subscription platform: led AngularJS→Angular 7 migration and extended Java 8 Spring Boot backend with new loan product configurations — submissions +20%, satisfaction +40%.',
+    icon: React.createElement(CgWorkAlt),
+    date: 'Aug 2018 – Mar 2019',
+  },
+  {
+    title: 'Full Stack Engineer',
+    location: 'Société Générale (Compliance IT) — Hybrid',
+    description:
+      'Built compliance evaluation platform full-stack: Java 8 SOLID-compliant backend and React/TypeScript real-time dashboards. Grew test coverage from 0 to 75% via TDD; platform usage climbed 25%.',
+    icon: React.createElement(CgWorkAlt),
+    date: 'Mar 2019 – Dec 2020',
+  },
+  {
+    title: 'Senior Full Stack Engineer',
+    location: 'AXA Insurance — Remote',
+    description:
+      'Built Java 17 DDD backend for the policy subscription lifecycle and architected a shared React component library adopted across 3+ squads (30% velocity improvement). Online subscriptions +10%.',
+    icon: React.createElement(CgWorkAlt),
+    date: 'Jan 2021 – Jun 2022',
+  },
+  {
+    title: 'Senior Full Stack Engineer',
+    location: 'Société Générale (Cybersecurity IT) — Remote',
+    description:
+      'Built an internal risk assessment platform end-to-end: Java 17 Spring Boot REST backend and React 18/TypeScript real-time frontend. Raised test coverage to 80%; containerised with Docker/Kubernetes.',
+    icon: React.createElement(CgWorkAlt),
+    date: 'Jul 2022 – Nov 2023',
+  },
+  {
+    title: 'Senior Full Stack Engineer',
+    location: 'Rolex SA (Software Factory) — Remote',
+    description:
+      'Own complete features end-to-end — database schema through Spring Boot API to React/Angular UI — for B2B retailer applications used by 200+ dealers worldwide. Led OAuth2→Okta SSO migration and Angular v9→v16 modernisation.',
+    icon: React.createElement(CgWorkAlt),
+    date: 'Dec 2023 – Present',
   },
 ] as const;
 
-export const projectsData = [
-  {
-    title: 'CorpComment',
-    description:
-      'I worked as a full-stack developer on this startup project for 2 years. Users can give public feedback to companies.',
-    tags: ['React', 'Next.js', 'MongoDB', 'Tailwind', 'Prisma'],
-    imageUrl: corpcommentImg,
-  },
-  {
-    title: 'rmtDev',
-    description:
-      'Job board for remote developer jobs. I was the front-end developer. It has features like filtering, sorting and pagination.',
-    tags: ['React', 'TypeScript', 'Next.js', 'Tailwind', 'Redux'],
-    imageUrl: rmtdevImg,
-  },
-  {
-    title: 'Word Analytics',
-    description:
-      'A public web app for quick analytics on text. It shows word count, character count and social media post limits.',
-    tags: ['React', 'Next.js', 'SQL', 'Tailwind', 'Framer'],
-    imageUrl: wordanalyticsImg,
-  },
-] as const;
+// Projects will be populated once published
+export const projectsData: readonly ProjectData[] = [];
 
 export const skillsData = [
+  'Java',
+  'Spring Boot',
+  'Spring Security',
+  'JPA / Hibernate',
+  'REST APIs',
+  'OAuth2 / JWT',
+  'React',
+  'TypeScript',
+  'Angular',
+  'Next.js',
+  'JavaScript',
   'HTML',
   'CSS',
-  'JavaScript',
-  'TypeScript',
-  'React',
-  'Next.js',
-  'Node.js',
-  'Git',
-  'Tailwind',
-  'Prisma',
-  'MongoDB',
-  'Redux',
-  'GraphQL',
-  'Apollo',
-  'Express',
+  'Tailwind CSS',
+  'Redux Toolkit',
+  'React Query',
   'PostgreSQL',
-  'Python',
-  'Django',
-  'Framer Motion',
+  'MongoDB',
+  'MySQL',
+  'Redis',
+  'AWS',
+  'Docker',
+  'Kubernetes',
+  'ArgoCD',
+  'CI/CD',
+  'Jest',
+  'JUnit',
+  'TDD',
+  'DDD',
+  'Clean Architecture',
+  'Git',
 ] as const;
