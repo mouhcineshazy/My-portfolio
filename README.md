@@ -1,27 +1,61 @@
-# Mouhcine SOUKAKI — Personal Portfolio
+# Mouhcine SOUKAKI — Senior Full Stack Engineer
 
-A modern, performant, and fully bilingual personal portfolio built with **Next.js 16**, **React 19**, and **TypeScript 6**. Features smooth scroll-linked animations, dark/light theme, English/French i18n, and a server-side contact form powered by Resend.
+**Java · React · TypeScript · AWS Solutions Architect**
+
+Ottawa, ON · Permanent Resident · Remote · EST · Available Immediately
+
+[soukaki.m@gmail.com](mailto:soukaki.m@gmail.com) · [linkedin.com/in/mouhcine-soukaki](https://linkedin.com/in/mouhcine-soukaki) · [github.com/mouhcineshazy](https://github.com/mouhcineshazy)
 
 ---
 
-## Tech Stack
+## About Me
+
+9+ years building end-to-end full-stack systems in equal measure — Java/Spring Boot backend and React/TypeScript frontend. Currently at **Rolex** owning complete features from database schema through REST API design to UI, designing and shipping both sides independently without hand-offs.
+
+Deep Java expertise (8→21) with DDD and Clean Architecture across regulated, high-stakes environments at **Société Générale**, **AXA**, and **Natixis** — bounded domain services, scalable API design, Spring Security 6, and JPA/Hibernate in production. Strong subscription and monetisation domain experience: built policy subscription flows at AXA and loan subscription platforms at Natixis.
+
+Strong React 18/19 and TypeScript frontend depth — component systems, auth flows, performance optimisation, and test coverage at every engagement. Led Angular v9→v16 migration at Rolex and AngularJS→Angular 7 at Natixis.
+
+**AWS Certified Solutions Architect** (Dec 2025) · Docker · Kubernetes · ArgoCD · CI/CD · Bilingual EN/FR · Engineering degree from **Télécom SudParis** (Grande École).
+
+---
+
+## Professional Stack
+
+| Domain | Technologies |
+|---|---|
+| **Backend** | Java 8–21, Spring Boot, Spring Security 6, JPA/Hibernate, REST APIs, OAuth2/Okta, JWT, Maven — DDD, SOLID & Clean Architecture |
+| **Frontend** | React 18/19 (hooks, context, Suspense), TypeScript (strict), Angular 7–16, JavaScript ES2022+, Tailwind CSS, Redux Toolkit, React Query |
+| **Cloud & Infra** | AWS (EC2, S3, Lambda, RDS, CloudFront — Solutions Architect certified), Docker, Kubernetes, ArgoCD, GitLab CI/CD, GitHub Actions |
+| **Databases** | PostgreSQL, MongoDB, MySQL, Redis |
+| **Testing** | JUnit, Mockito, Jest, React Testing Library, TDD |
+| **AI Tooling** | Claude Code, GitHub Copilot, JetBrains AI Assistant — daily workflow |
+| **Languages** | French (Native) · English (Fluent / Professional) · Arabic (Native) |
+
+---
+
+## This Repository
+
+This is the source code for my **personal portfolio website** — a bilingual (EN/FR), dark-mode-aware single-page application that showcases my projects, skills, experience, and a working contact form. It is also a live demonstration of modern frontend architecture: Next.js App Router, React Server Actions, Framer Motion animations, and a clean React Context state model.
+
+### Portfolio Build Stack
 
 | Layer | Technology |
 |---|---|
-| Framework | Next.js 16 (App Router) |
+| Framework | Next.js 16 (App Router, Turbopack) |
 | UI Library | React 19 |
-| Language | TypeScript 6 |
-| Styling | Tailwind CSS 3 (dark mode via class strategy) |
+| Language | TypeScript 6 (strict) |
+| Styling | Tailwind CSS 3 (class dark-mode strategy) |
 | Animations | Framer Motion 12 |
-| i18n | React Intl 6 |
+| i18n | React Intl 10 (EN / FR) |
 | Email | Resend + React Email |
-| Icons | React Icons 5 |
-| Linting | ESLint 9 (flat config) + Prettier |
+| Icons | React Icons 5 · country-flag-icons |
+| Linting | ESLint 9 (flat config) + Prettier 3 |
 | Hosting | Vercel |
 
 ---
 
-## Features
+## Portfolio Features
 
 - **Animated hero** — profile image, CTA buttons, and social links with spring/tween entrance animations
 - **Bilingual support** — English and French, toggled at runtime with browser-locale auto-detection and `localStorage` persistence
@@ -80,6 +114,7 @@ A modern, performant, and fully bilingual personal portfolio built with **Next.j
 │   └── utils.ts               # validateString, getErrorMessage
 ├── public/
 │   ├── CV.pdf
+│   ├── Mouhcine_Soukaki_Resume.docx
 │   ├── profile.jpeg
 │   ├── corpcomment.png
 │   ├── rmtdev.png
@@ -170,7 +205,7 @@ RESEND_API_KEY=re_xxxxxxxxxxxxxxxxxxxx
 |---|---|
 | `RESEND_API_KEY` | Resend API key used by the Server Action to send transactional emails |
 
-> The contact form sends messages to `soukaki.m@gmail.com`. To use your own address, update the `to` field in `actions/sendEmails.ts`.
+> The contact form sends messages to `soukaki.m@gmail.com`. Update the `to` field in `actions/sendEmails.ts` to use your own address.
 
 ### Development Server
 
@@ -197,7 +232,7 @@ Open [http://localhost:3000](http://localhost:3000).
 
 ### Tailwind CSS
 
-`tailwind.config.js` — dark mode uses the **class strategy**, enabled by adding `dark` to the `<html>` element. The `ThemeContextProvider` handles this directly via `document.documentElement.classList`.
+`tailwind.config.js` — dark mode uses the **class strategy**, enabled by adding `dark` to the `<html>` element. The `ThemeContextProvider` manages this via `document.documentElement.classList`.
 
 `globals.css` defines a `--line-color` CSS custom property used by the vertical timeline:
 
@@ -246,11 +281,11 @@ The portfolio supports **English** and **French** using [React Intl](https://for
 3. Use it in a component:
 
 ```tsx
-// hook form
+// hook
 const intl = useIntl();
 intl.formatMessage({ id: TranslationKeys.YOUR_KEY })
 
-// JSX component
+// JSX
 <FormattedMessage id={TranslationKeys.YOUR_KEY} />
 ```
 
@@ -277,32 +312,6 @@ export const skillsData = [ ... ] as const;
 ```
 
 Place project screenshots in `/public/` and import them in `lib/data.ts` using Next.js static image imports for automatic optimisation.
-
----
-
-## Email Integration
-
-The contact form uses a **Next.js Server Action** (`actions/sendEmails.ts`) — no separate API route needed. The flow:
-
-1. The `<form action={sendEmail}>` in `contact.tsx` calls the Server Action directly.
-2. Server-side validation with `validateString()` ensures email ≤ 500 chars and message ≤ 5 000 chars.
-3. If valid, `resend.emails.send()` delivers a React Email template (`email/contact-form-email.tsx`) styled with Tailwind.
-4. The `replyTo` field is set to the sender's email so you can reply directly from your inbox.
-
-To test email locally, set `RESEND_API_KEY` in `.env.local`. Emails from the free tier are sent from `onboarding@resend.dev`. To use a custom domain, update the `from` field and verify the domain in the Resend dashboard.
-
----
-
-## Deployment
-
-This project is optimised for **Vercel**.
-
-1. Push to GitHub.
-2. Import the repository on [vercel.com](https://vercel.com).
-3. Add the `RESEND_API_KEY` environment variable in the Vercel project settings.
-4. Deploy — Vercel auto-detects Next.js and configures the build.
-
-The project has no database dependency, making cold-start latency negligible.
 
 ---
 
