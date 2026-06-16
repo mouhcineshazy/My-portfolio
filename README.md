@@ -66,7 +66,7 @@ This is the source code for my **personal portfolio website** — a bilingual (E
 - **Vertical experience timeline** — theme-aware `react-vertical-timeline-component` with light/dark background switching
 - **Contact form** — Next.js Server Action submits directly without a separate API route; `react-hot-toast` shows success/error feedback
 - **Transactional email** — Resend sends a React Email template to the owner's inbox on each form submission
-- **CV download** — direct link to `/public/CV.pdf`
+- **CV download** — direct link to `/public/Mouhcine_Soukaki_Resume.pdf`
 
 ---
 
@@ -113,8 +113,7 @@ This is the source code for my **personal portfolio website** — a bilingual (E
 │   ├── types.ts               # SectionName type (derived from links const)
 │   └── utils.ts               # validateString, getErrorMessage
 ├── public/
-│   ├── CV.pdf
-│   ├── Mouhcine_Soukaki_Resume.docx
+│   ├── Mouhcine_Soukaki_Resume.pdf
 │   ├── profile.jpeg
 │   ├── corpcomment.png
 │   ├── rmtdev.png
@@ -123,9 +122,6 @@ This is the source code for my **personal portfolio website** — a bilingual (E
 ├── tailwind.config.js
 ├── tsconfig.json
 └── package.json
-```
-
----
 
 ## Architecture Overview
 

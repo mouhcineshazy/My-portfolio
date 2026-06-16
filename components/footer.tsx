@@ -1,15 +1,17 @@
-import React from 'react';
+'use client';
+
+import { useIntl } from 'react-intl';
+import { TranslationKeys } from '@/lang/constants';
 
 export default function Footer() {
+  const intl = useIntl();
+  const year = new Date().getFullYear();
+
   return (
-    <footer className="mb-10 px-4 text-center text-gray-500">
-      <small className="mb-2 text-xs block">
-        &copy;2023 Mouhcine SOUKAKI. All rights reserved
-      </small>
-      <p className="text-xs">
-        <span className="font-semibold">About this website: </span>
-        built with React & Next.js (App Router & server Actions), Typescript,
-        tailwind CSS, Framer Motion, React Email & Resend, Vercel hosting.
+    <footer className="mb-10 px-4 text-center">
+      <p className="text-xs text-gray-400 dark:text-gray-600">
+        &copy; {year} Mouhcine Soukaki &mdash;{' '}
+        {intl.formatMessage({ id: TranslationKeys.FOOTER_TEXT })}
       </p>
     </footer>
   );

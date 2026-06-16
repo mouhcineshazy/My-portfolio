@@ -1,80 +1,72 @@
 'use client';
 
 import type { ProjectData } from '@/lib/types';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import Image from 'next/image';
-import { useRef } from 'react';
+import { useIntl } from 'react-intl';
+import { LuExternalLink } from 'react-icons/lu';
 
-type ProjectProps = ProjectData;
+type Props = ProjectData & { index: number };
 
-export default function Project({
-  title,
-  tags,
-  description,
-  imageUrl,
-}: ProjectProps) {
-  const wrapperDivRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: wrapperDivRef,
-    offset: ['0 1', '1.33 1'], // 0 is the end of the bottom if the view port and 1 is for the top of the target see documentation of framer motion and [1.33 1] is specifying where it should end
-  });
-  const scaleProgress = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
-  const opacityProgress = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
+export default function Project({ titleKey, descriptionKey, tags, imageUrl, url, index }: Props) {
+  const intl = useIntl();
+  const shouldReduce = useReducedMotion();
+  const title = intl.formatMessage({ id: titleKey });
+  const description = intl.formatMessage({ id: descriptionKey });
+
   return (
     <motion.div
-      ref={wrapperDivRef}
-      style={{
-        scale: scaleProgress,
-        opacity: opacityProgress,
-      }}
-      className=" group mb-3 sm:mb-8 last:mb-0"
+      className="group relative flex flex-col rounded-2xl border border-black/[0.06] dark:border-white/[0.06] bg-white/60 dark:bg-white/[0.03] overflow-hidden"
+      initial={shouldReduce ? {} : { opacity: 0, y: 20 }}
+      whileInView={shouldReduce ? {} : { opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.4, delay: index * 0.08 }}
     >
-      <section
-        className="bg-gray-100 max-w-[42rem] border
-       border-black/5 rounded-lg overflow-hidden sm:pr-8 
-       relative sm:h-[20rem]  hover:bg-gray-200 transition 
-       sm:group-even:pl-8 dark:bg-white/10 dark:hover:bg-white/20 dark:text-white"
-      >
-        <div
-          className="pt-4 pb-7 px-5 sm:pl-10 
-        sm:pr-2 sm:pt-10 sm:max-w-[50%] 
-        flex flex-col h-full sm:group-even:ml-[18rem]"
-        >
-          <h3 className="text-2xl font-semibold">{title}</h3>
-          <p className="mt-2 leading-relaxed text-gray-700 dark:text-white/70">
-            {description}
-          </p>
-          <ul className="flex flex-wrap mt-4 gap-2 sm:mt-auto">
-            {tags.map((tag, index) => (
-              <li
-                className="bg-black/[0.7] px-3 py-1 text-[0.7rem] uppercase tracking-wider text-white rounded-full"
-                key={index}
-              >
-                {tag}
-              </li>
-            ))}
-          </ul>
-        </div>
+      {/* Screenshot */}
+      <div className="relative h-40 overflow-hidden border-b border-black/[0.06] dark:border-white/[0.06] shrink-0">
         <Image
           src={imageUrl}
-          alt="project I worked on"
+          alt={title}
+          fill
+          className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.04]"
           quality={90}
-          className="absolute hidden sm:block top-8 -right-40 w-[28.25rem] 
-            rounded-t-lg shadow-2xl 
-            group-even:right-[initial] 
-            group-even:-left-40 
-            group-hover:-translate-x-3 
-            group-hover:translate-y-3 
-            group-hover:-rotate-2
-
-            group-even:group-hover:translate-x-3 
-            group-evengroup-hover:translate-y-3 
-            group-even:group-hover:rotate-2
-            group-hover:scale-[1.04]
-            transition 
-            "
         />
-      </section>
+      </div>
+
+      {/* Content */}
+      <div className="flex flex-col flex-1 gap-3 px-6 py-5">
+        <div className="flex items-start justify-between gap-3">
+          <h3 className="font-semibold text-gray-900 dark:text-gray-100 leading-snug">
+            {title}
+          </h3>
+          {url && (
+            <a
+              href={url}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`View ${title}`}
+              className="shrink-0 flex items-center justify-center w-8 h-8 rounded-full bg-gray-100 dark:bg-white/[0.06] border border-black/[0.06] dark:border-white/[0.06] text-gray-500 dark:text-gray-400 hover:scale-110 active:scale-100 transition-transform duration-150"
+            >
+              <LuExternalLink className="text-sm" />
+            </a>
+          )}
+        </div>
+
+        <p className="text-xs leading-relaxed text-gray-600 dark:text-gray-300">
+          {description}
+        </p>
+
+        <div className="flex flex-wrap gap-1.5 mt-auto pt-1">
+          {tags.map((tag) => (
+            <span
+              key={tag}
+              className="px-2.5 py-0.5 text-[0.62rem] font-semibold uppercase tracking-widest rounded-full bg-black/[0.06] dark:bg-white/[0.06] text-gray-600 dark:text-gray-400 border border-black/[0.05] dark:border-white/[0.05]"
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
+      </div>
     </motion.div>
   );
 }

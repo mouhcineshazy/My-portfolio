@@ -1,69 +1,72 @@
 'use client';
-import React from 'react';
+
 import SectionHeading from './section-heading';
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import { useSectionInView } from '@/lib/hooks';
 import { sendEmail } from '@/actions/sendEmails';
 import SubmitBtn from './submit-btn';
 import toast from 'react-hot-toast';
+import { useIntl } from 'react-intl';
+import { TranslationKeys } from '@/lang/constants';
 
 export default function Contact() {
   const { ref } = useSectionInView('Contact');
+  const shouldReduce = useReducedMotion();
+  const intl = useIntl();
 
   return (
-    <motion.section
+    <section
       ref={ref}
       id="contact"
-      className="mb-20 sm:mb-28 w-[min(100%,38rem)] text-center"
-      initial={{
-        opacity: 0,
-      }}
-      whileInView={{
-        opacity: 1,
-      }}
-      transition={{
-        duration: 1,
-      }}
-      viewport={{
-        once: true,
-      }}
+      className="mb-20 sm:mb-28 max-w-[40rem] w-full scroll-mt-28"
     >
-      <SectionHeading>Contact Me</SectionHeading>
-      <p className="text-gray-700 -mt-6 dark:text-white/80">
-        Please contact me directly at{' '}
-        <a className="underline" href="mailto:soukaki.mouhcine@gmail.com">
-          soukaki.mouhcine@gmail.com
-        </a>{' '}
-        or through this form.
-      </p>
-      <form
-        className="mt-10 flex flex-col dark:text-black"
-        action={async (formData) => {
-          const { data, error } = await sendEmail(formData);
-          if (error) {
-            toast.error(error);
-            return;
-          }
-          toast.success('sent successfully');
-        }}
+      <SectionHeading>{intl.formatMessage({ id: TranslationKeys.SECTION_CONTACT })}</SectionHeading>
+
+      <motion.div
+        initial={shouldReduce ? {} : { opacity: 0, y: 24 }}
+        whileInView={shouldReduce ? {} : { opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.45 }}
       >
-        <input
-          name="senderEmail"
-          className="h-14 px-4 rounded-lg borderBlack dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all dark:outline-none"
-          type="email"
-          required
-          maxLength={500}
-          placeholder="your email"
+        <p
+          className="text-sm text-gray-500 dark:text-gray-400 mb-8 leading-relaxed text-center"
+          dangerouslySetInnerHTML={{
+            __html: intl.formatMessage({ id: TranslationKeys.CONTACT_INTRO }),
+          }}
         />
-        <textarea
-          name="message"
-          className="h-52 my-3 rounded-lg borderBlack p-4  dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all dark:outline-none"
-          placeholder="Your Message"
-          required
-          maxLength={5000}
-        />
-        <SubmitBtn />
-      </form>
-    </motion.section>
+
+        <form
+          className="flex flex-col gap-3"
+          action={async (formData) => {
+            const { error } = await sendEmail(formData);
+            if (error) {
+              toast.error(error);
+              return;
+            }
+            toast.success(intl.formatMessage({ id: TranslationKeys.CONTACT_SUCCESS }));
+          }}
+        >
+          <input
+            name="senderEmail"
+            type="email"
+            required
+            maxLength={500}
+            placeholder={intl.formatMessage({ id: TranslationKeys.CONTACT_EMAIL_PLACEHOLDER })}
+            className="h-12 px-4 rounded-xl bg-white/70 dark:bg-white/[0.05] border border-black/[0.08] dark:border-white/[0.08] text-sm text-gray-800 dark:text-gray-200 placeholder:text-gray-400 dark:placeholder:text-gray-600 focus:outline-none focus:ring-2 focus:ring-violet-400/40 dark:focus:ring-violet-600/40 transition-shadow"
+          />
+          <textarea
+            name="message"
+            required
+            maxLength={5000}
+            placeholder={intl.formatMessage({ id: TranslationKeys.CONTACT_MESSAGE_PLACEHOLDER })}
+            rows={6}
+            className="px-4 py-3 rounded-xl bg-white/70 dark:bg-white/[0.05] border border-black/[0.08] dark:border-white/[0.08] text-sm text-gray-800 dark:text-gray-200 placeholder:text-gray-400 dark:placeholder:text-gray-600 focus:outline-none focus:ring-2 focus:ring-violet-400/40 dark:focus:ring-violet-600/40 transition-shadow resize-none"
+          />
+          <div className="flex justify-end">
+            <SubmitBtn />
+          </div>
+        </form>
+      </motion.div>
+    </section>
   );
 }

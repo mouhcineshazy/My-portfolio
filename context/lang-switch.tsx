@@ -2,16 +2,9 @@
 
 import { SupportedLocales, defaultLanguage, locales } from '@/lang';
 import { Langs } from '@/lang/constants';
-import React, {
-  Fragment,
-  PropsWithChildren,
-  createContext,
-  useContext,
-  useState,
-} from 'react';
+import { Fragment, PropsWithChildren, createContext, useContext, useState } from 'react';
 import { IntlProvider as ReactIntlProvider } from 'react-intl';
 
-/*TODO: add props to the langage context*/
 type LangProviderProps = {
   toggleLanguage: () => void;
   locale: SupportedLocales;
@@ -23,7 +16,7 @@ export const useLanguageSwitchContext = () => {
   const context = useContext(LangContext);
   if (!context) {
     throw new Error(
-      'useLanguageSwitchContext should be used  within an LangSwitchContextProvider',
+      'useLanguageSwitchContext must be used within LangSwitchProvider',
     );
   }
 

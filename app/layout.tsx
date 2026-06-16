@@ -1,21 +1,20 @@
 import Header from '@/components/header';
 import './globals.css';
-import { Inter } from 'next/font/google';
+import { DM_Sans } from 'next/font/google';
 import ActiveSectionContextProvider from '@/context/active-section';
 import { Toaster } from 'react-hot-toast';
 import Footer from '@/components/footer';
 import ThemeSwitch from '@/components/theme-switch';
 import ThemeContextProvider from '@/context/theme-switch-context';
-import LangSwitchContext from '@/context/lang-switch';
 import LangSwitchProvider from '@/context/lang-switch';
 import LanguageSwitch from '@/components/language-switch';
 
-const inter = Inter({ subsets: ['latin'] });
+const dmSans = DM_Sans({ subsets: ['latin'], weight: ['300', '400', '500', '600', '700'] });
 
 export const metadata = {
-  title: 'Mouhcine SOUKAKI | Personal Portfolio',
+  title: 'Mouhcine SOUKAKI — Senior Full Stack Engineer',
   description:
-    'Mouhcine is a fullstack developer with 8 years of experience working with JAVA | ReactJs | NextJS | Kubernetes | Spring boot',
+    'Senior Full Stack Engineer with 9+ years of experience — Java · Spring Boot · React · TypeScript · AWS. Based in Ottawa, ON. Available immediately.',
 };
 
 export default function RootLayout({
@@ -26,19 +25,25 @@ export default function RootLayout({
   return (
     <html lang="en" className="!scroll-smooth">
       <body
-        className={`${inter.className} bg-gray-50 text-gray-950 relative pt-28 sm:pt-36 dark:bg-gray-900 dark:text-gray-50 dark:text-opacity-90`}
+        className={`${dmSans.className} bg-gray-50 text-gray-950 relative pt-28 sm:pt-36 dark:bg-gray-950 dark:text-gray-50 dark:text-opacity-90`}
       >
-        <div className="bg-[#fbe2e3] absolute top-[-6rem] -z-10 right-[11rem] h-[31.25rem] w-[31.25rem] rounded-full blur-[10rem] sm:w-[68.75rem] dark:bg-[#946263]"></div>
-        <div className="bg-[#dbd7fb] absolute top-[-1rem] -z-10 left-[-35rem] h-[50rem] w-[31.25rem] rounded-full blur-[10rem] sm:w-[68.75rem] md:left[-33rem] lg:left-[-28rem] xl:left-[-15rem] 2xl:left-[-5rem] dark:bg-[#676394]"></div>
+        {/* Ambient blob — warm pink-red */}
+        <div className="bg-[#fbe2e3] absolute top-[-8rem] -z-10 right-[8rem] h-[40rem] w-[40rem] rounded-full blur-[8rem] sm:w-[72rem] opacity-60 dark:bg-[#7c3d3f] dark:opacity-40" />
+        {/* Ambient blob — cool purple */}
+        <div className="bg-[#dbd7fb] absolute top-[4rem] -z-10 left-[-38rem] h-[50rem] w-[36rem] rounded-full blur-[10rem] sm:w-[72rem] md:left-[-30rem] lg:left-[-22rem] xl:left-[-12rem] 2xl:left-[-2rem] opacity-60 dark:bg-[#3f3a5c] dark:opacity-50" />
+
         <ThemeContextProvider>
           <ActiveSectionContextProvider>
             <LangSwitchProvider>
               <Header />
-              <Toaster position="top-right" />
+              <Toaster position="top-right" toastOptions={{ className: 'dark:bg-gray-800 dark:text-gray-100' }} />
               {children}
               <Footer />
-              <LanguageSwitch />
-              <ThemeSwitch />
+              {/* Utility controls — top-right, aligned with the nav pill */}
+              <div className="fixed top-4 right-4 sm:top-6 sm:right-6 flex items-center gap-2 z-[999]">
+                <LanguageSwitch />
+                <ThemeSwitch />
+              </div>
             </LangSwitchProvider>
           </ActiveSectionContextProvider>
         </ThemeContextProvider>

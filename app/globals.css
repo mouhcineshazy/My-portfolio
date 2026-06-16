@@ -2,14 +2,45 @@
 @tailwind components;
 @tailwind utilities;
 
-
 html {
-    --line-color: #e5e7eb;
+  --line-color: #e5e7eb;
 }
 
-html.dark{
-     --line-color: rgba(255,255,255,0.2);
+html.dark {
+  --line-color: rgba(255, 255, 255, 0.08);
 }
-.borderBlack{
-    @apply border border-black/10
+
+@layer base {
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background-color: rgb(221 214 254);
+    color: rgb(109 40 217);
+  }
+
+  html.dark ::selection {
+    background-color: rgb(109 40 217 / 0.4);
+    color: rgb(237 233 254);
+  }
+}
+
+@layer utilities {
+  .borderBlack {
+    @apply border border-black/10;
+  }
+
+  /* Grain overlay for depth — applied to the root via pseudo-element in layout */
+  .grain::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: 999;
+    pointer-events: none;
+    opacity: 0.025;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 200px 200px;
+  }
 }
