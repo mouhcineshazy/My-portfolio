@@ -25,7 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="!scroll-smooth">
       <body
-        className={`${dmSans.className} bg-gray-50 text-gray-950 relative pt-28 sm:pt-36 dark:bg-gray-950 dark:text-gray-50 dark:text-opacity-90`}
+        className={`${dmSans.className} bg-gray-50 text-gray-950 relative pt-28 md:pt-36 dark:bg-gray-950 dark:text-gray-50 dark:text-opacity-90`}
       >
         {/* Ambient blob — warm pink-red */}
         <div className="bg-[#fbe2e3] absolute top-[-8rem] -z-10 right-[8rem] h-[40rem] w-[40rem] rounded-full blur-[8rem] sm:w-[72rem] opacity-60 dark:bg-[#7c3d3f] dark:opacity-40" />
@@ -40,7 +40,7 @@ export default function RootLayout({
               {children}
               <Footer />
               {/* Utility controls — top-right, aligned with the nav pill */}
-              <div className="fixed top-4 right-4 sm:top-6 sm:right-6 flex items-center gap-2 z-[999]">
+              <div className="fixed top-2 right-4 md:top-6 md:right-6 lg:top-[1.375rem] lg:right-6 flex flex-row md:flex-col lg:flex-row items-center gap-2 z-[999]">
                 <LanguageSwitch />
                 <ThemeSwitch />
               </div>
