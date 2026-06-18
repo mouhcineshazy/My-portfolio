@@ -1,0 +1,58 @@
+# Mouhcine Soukaki
+
+> Senior Full Stack Engineer — Java · Spring Boot · React · TypeScript · AWS | Ottawa, Ontario, Canada | Available immediately for remote (US/Canada) and local roles
+
+Mouhcine Soukaki is a Senior Full Stack Engineer based in Ottawa, Ontario, Canada, with 9+ years of professional experience building and owning complete features end-to-end — from Java/Spring Boot microservices to React/TypeScript frontends — in regulated, high-stakes enterprise environments.
+
+He has delivered production systems at Rolex, Société Générale (×2), AXA, and Natixis, serving thousands of users across banking, insurance, and luxury retail. He holds an AWS Certified Solutions Architect – Associate certification (December 2025) and a Master's degree in Software Engineering from Télécom SudParis (Grande École), France.
+
+He is bilingual English/French, a Canadian Permanent Resident, and available to work for US companies fully remotely or Canadian companies locally — no visa sponsorship required. Ottawa timezone (EST), overlapping all US east coast hours.
+
+## Core Technical Skills
+
+**Backend:** Java 8–21, Spring Boot, Spring Security 6, JPA/Hibernate, REST APIs, OAuth2, JWT, Domain-Driven Design (DDD), Clean Architecture, SOLID, Node.js, NestJS
+
+**Frontend:** React 18/19, Next.js, Angular 7–16, TypeScript, JavaScript (ES2022+), Tailwind CSS, Redux Toolkit, React Query
+
+**Cloud & DevOps:** AWS (Certified Solutions Architect), Docker, Kubernetes, ArgoCD, GitLab CI/CD, GitHub Actions
+
+**Databases:** PostgreSQL, MongoDB, MySQL, Redis, Supabase
+
+**Testing:** Jest, React Testing Library, JUnit, Mockito, TDD, k6
+
+## Professional Experience
+
+- **Rolex** — Senior Full Stack Engineer (December 2023 – Present) | Remote from Ottawa, ON
+- **Société Générale** — Senior Full Stack Engineer (June 2022 – November 2023) | Remote from Paris / Canada
+- **AXA** — Senior Full Stack Engineer (January 2021 – May 2022) | Paris, France
+- **Natixis** — Full Stack Engineer (September 2019 – December 2020) | Paris, France
+- **Capgemini / Société Générale** — Full Stack Engineer (September 2017 – August 2019) | Paris, France
+
+## Certifications & Education
+
+- AWS Certified Solutions Architect – Associate (December 2025)
+- Master's degree in Software Engineering — Télécom SudParis, Grande École, France
+
+## Availability & Location
+
+- Based in: Ottawa, Ontario, Canada
+- Work authorization: Canadian Permanent Resident — no visa sponsorship required for US remote or Canadian roles
+- Available for: US remote roles, Ottawa local market, Canadian federal government contracts (security clearance eligible)
+- Timezone: EST (UTC-5) — full overlap with US east coast
+- Languages: English (fluent), French (native/bilingual)
+
+## Target Roles
+
+Senior Full Stack Engineer, Senior Java Developer, Senior Software Engineer, Senior Backend Engineer, Lead Full Stack Engineer
+
+## Industries
+
+Banking, Financial Services, Insurance, Luxury, Enterprise Software, Federal Government (Canada)
+
+## Contact
+
+- Email: soukaki.m@gmail.com
+- Portfolio: https://mouhcine-soukaki.com
+- LinkedIn: https://www.linkedin.com/in/mouhcine-soukaki/
+- GitHub: https://github.com/mouhcineshazy
+- Resume: https://mouhcine-soukaki.com/Mouhcine_Soukaki_Resume.pdf
