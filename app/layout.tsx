@@ -9,7 +9,7 @@ import ThemeContextProvider from '@/context/theme-switch-context';
 import LangSwitchProvider from '@/context/lang-switch';
 import LanguageSwitch from '@/components/language-switch';
 
-const dmSans = DM_Sans({ subsets: ['latin'], weight: ['300', '400', '500', '600', '700'] });
+const dmSans = DM_Sans({ subsets: ['latin'], weight: ['400', '500', '600'] });
 
 export const metadata = {
   title: 'Mouhcine SOUKAKI — Senior Full Stack Engineer',
@@ -28,9 +28,9 @@ export default function RootLayout({
         className={`${dmSans.className} bg-gray-50 text-gray-950 relative pt-28 md:pt-36 dark:bg-gray-950 dark:text-gray-50/90`}
       >
         {/* Ambient blob — warm pink-red */}
-        <div aria-hidden className="bg-[#fbe2e3] absolute top-[-8rem] -z-10 right-[8rem] h-[40rem] w-[40rem] rounded-full blur-[8rem] sm:w-[72rem] opacity-60 dark:bg-[#7c3d3f] dark:opacity-40 pointer-events-none" />
+        <div aria-hidden className="bg-[#fbe2e3] absolute top-[-8rem] -z-10 right-[8rem] h-[22rem] w-[22rem] rounded-full blur-[3rem] sm:h-[40rem] sm:w-[72rem] sm:blur-[8rem] opacity-60 dark:bg-[#7c3d3f] dark:opacity-40 pointer-events-none" />
         {/* Ambient blob — cool purple */}
-        <div aria-hidden className="bg-[#dbd7fb] absolute top-[4rem] -z-10 left-[-38rem] h-[50rem] w-[36rem] rounded-full blur-[10rem] sm:w-[72rem] md:left-[-30rem] lg:left-[-22rem] xl:left-[-12rem] 2xl:left-[-2rem] opacity-60 dark:bg-[#3f3a5c] dark:opacity-50 pointer-events-none" />
+        <div aria-hidden className="bg-[#dbd7fb] absolute top-[4rem] -z-10 left-[-20rem] h-[28rem] w-[28rem] rounded-full blur-[3rem] sm:h-[50rem] sm:w-[72rem] sm:blur-[10rem] sm:left-[-38rem] md:left-[-30rem] lg:left-[-22rem] xl:left-[-12rem] 2xl:left-[-2rem] opacity-60 dark:bg-[#3f3a5c] dark:opacity-50 pointer-events-none" />
 
         <ThemeContextProvider>
           <ActiveSectionContextProvider>
