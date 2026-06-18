@@ -150,7 +150,7 @@ export const projectsData: readonly ProjectData[] = [
     titleKey: TranslationKeys.PROJ_1_TITLE,
     descriptionKey: TranslationKeys.PROJ_1_DESC,
     tags: ['Next.js 15', 'TypeScript', 'Tailwind CSS', 'next-intl', 'React Hook Form', 'Resend', 'Cal.com', 'Netlify'],
-    imageUrl: '/mab-services-project/mabservices-screenshot-en.png',
+    imageUrl: '/mab-services-project/mabservices-screenshot-en.jpg',
     url: 'https://mabservices-ca.com/',
   },
 ];

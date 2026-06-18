@@ -28,8 +28,9 @@ export default function Project({ titleKey, descriptionKey, tags, imageUrl, url,
           src={imageUrl}
           alt={title}
           fill
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 600px"
           className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.04]"
-          quality={90}
+          quality={75}
         />
       </div>
 

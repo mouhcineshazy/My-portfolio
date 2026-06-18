@@ -66,7 +66,7 @@ export default function Intro() {
               alt="Mouhcine Soukaki"
               width={96}
               height={96}
-              quality={95}
+              quality={85}
               priority
               className="rounded-full object-cover w-24 h-24"
             />

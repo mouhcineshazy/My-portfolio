@@ -27,7 +27,7 @@ export default function Header() {
       {/* ── Desktop pill background (md+ only) ── */}
       <motion.div
         className={clsx(
-          'fixed top-0 left-1/2 hidden',
+          'fixed top-0 left-1/2 hidden will-change-transform',
           'border border-white/40 bg-white/80 shadow-lg shadow-black/[0.03]',
           'backdrop-blur-[0.5rem]',
           'md:flex md:top-6 md:h-[3.25rem] md:rounded-full',
@@ -81,7 +81,7 @@ export default function Header() {
       {/* ── Mobile / tablet bar background (below md) ── */}
       <motion.div
         className={clsx(
-          'md:hidden fixed top-0 left-0 right-0 h-[4rem]',
+          'md:hidden fixed top-0 left-0 right-0 h-[4rem] will-change-transform',
           'border-b border-white/40 bg-white/80 shadow-sm shadow-black/[0.03]',
           'backdrop-blur-[0.5rem]',
           'dark:bg-gray-950/75 dark:border-black/40',
@@ -126,8 +126,8 @@ export default function Header() {
 
             <motion.div
               className={clsx(
-                'md:hidden fixed top-[4.5rem] left-4 right-4 z-[998]',
-                'bg-white/90 dark:bg-gray-950/90 backdrop-blur-[0.75rem]',
+                'md:hidden fixed top-[4.5rem] left-4 right-4 z-[998] will-change-transform',
+                'bg-white/95 dark:bg-gray-950/95 backdrop-blur-[0.5rem]',
                 'border border-white/50 dark:border-white/[0.08]',
                 'rounded-2xl shadow-xl shadow-black/[0.1] overflow-hidden',
               )}

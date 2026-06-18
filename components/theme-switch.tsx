@@ -10,7 +10,7 @@ export default function ThemeSwitch() {
     <button
       onClick={toggleTheme}
       aria-label={theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode'}
-      className="bg-white w-[3rem] h-[3rem] bg-opacity-80 backdrop-blur-[0.5rem] border border-white border-opacity-40 shadow-2xl rounded-full flex items-center justify-center hover:scale-[1.15] active:scale-105 transition-all dark:bg-gray-950 dark:border-white/20"
+      className="bg-white/80 w-[3rem] h-[3rem] backdrop-blur-[0.5rem] border border-white/40 shadow-lg rounded-full flex items-center justify-center hover:scale-[1.15] active:scale-105 transition will-change-transform dark:bg-gray-950/80 dark:border-white/20"
     >
       {theme === 'light' ? (
         <BsSun className="text-gray-600 text-base" />
