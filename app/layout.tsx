@@ -28,9 +28,9 @@ export default function RootLayout({
         className={`${dmSans.className} bg-gray-50 text-gray-950 relative pt-28 md:pt-36 dark:bg-gray-950 dark:text-gray-50/90`}
       >
         {/* Ambient blob — warm pink-red */}
-        <div aria-hidden className="bg-[#fbe2e3] absolute top-[-8rem] -z-10 right-[8rem] h-[40rem] w-[40rem] rounded-full blur-[8rem] sm:w-[72rem] opacity-60 dark:bg-[#7c3d3f] dark:opacity-40 will-change-transform [transform:translateZ(0)] pointer-events-none" />
+        <div aria-hidden className="bg-[#fbe2e3] absolute top-[-8rem] -z-10 right-[8rem] h-[40rem] w-[40rem] rounded-full blur-[8rem] sm:w-[72rem] opacity-60 dark:bg-[#7c3d3f] dark:opacity-40 pointer-events-none" />
         {/* Ambient blob — cool purple */}
-        <div aria-hidden className="bg-[#dbd7fb] absolute top-[4rem] -z-10 left-[-38rem] h-[50rem] w-[36rem] rounded-full blur-[10rem] sm:w-[72rem] md:left-[-30rem] lg:left-[-22rem] xl:left-[-12rem] 2xl:left-[-2rem] opacity-60 dark:bg-[#3f3a5c] dark:opacity-50 will-change-transform [transform:translateZ(0)] pointer-events-none" />
+        <div aria-hidden className="bg-[#dbd7fb] absolute top-[4rem] -z-10 left-[-38rem] h-[50rem] w-[36rem] rounded-full blur-[10rem] sm:w-[72rem] md:left-[-30rem] lg:left-[-22rem] xl:left-[-12rem] 2xl:left-[-2rem] opacity-60 dark:bg-[#3f3a5c] dark:opacity-50 pointer-events-none" />
 
         <ThemeContextProvider>
           <ActiveSectionContextProvider>
