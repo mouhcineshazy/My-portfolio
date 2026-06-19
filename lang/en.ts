@@ -103,10 +103,12 @@ export const en: Translations = {
   [TranslationKeys.PROJ_1_DESC]: 'Bilingual lead-generation website for an insurance broker and financial security advisor licensed in Québec (AMF) and Ontario (FSRA). Features Cal.com consultation booking, a masterclass with countdown timer, and AI-optimised SEO with JSON-LD structured data.',
 
   // Contact
-  [TranslationKeys.CONTACT_INTRO]: `Open to new opportunities — reach me at <a href="mailto:soukaki.m@gmail.com" class="text-gray-700 dark:text-gray-300 underline underline-offset-2 decoration-gray-300 dark:decoration-gray-600 hover:decoration-gray-500 transition-colors">soukaki.m@gmail.com</a> or use the form below.`,
+  [TranslationKeys.CONTACT_INTRO]: `Available for senior full-stack roles (US remote · Ottawa), technical consulting, and freelance projects. Hiring a senior engineer, launching a product, or have a project that needs to ship? Let's talk — at <a href="mailto:soukaki.m@gmail.com" class="text-gray-700 dark:text-gray-300 underline underline-offset-2 decoration-gray-300 dark:decoration-gray-600 hover:decoration-gray-500 transition-colors">soukaki.m@gmail.com</a> or below.`,
   [TranslationKeys.CONTACT_EMAIL_PLACEHOLDER]: 'Your email',
   [TranslationKeys.CONTACT_MESSAGE_PLACEHOLDER]: 'Your message',
-  [TranslationKeys.CONTACT_SUCCESS]: "Message sent — I'll get back to you soon.",
+  [TranslationKeys.CONTACT_SUCCESS_TITLE]: 'Message received.',
+  [TranslationKeys.CONTACT_SUCCESS_DESC]: "I'll get back to you within 24 hours. In the meantime, feel free to connect on <a href=\"https://www.linkedin.com/in/mouhcine-soukaki\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-gray-700 dark:text-gray-300 underline underline-offset-2 decoration-gray-300 dark:decoration-gray-600 hover:decoration-gray-500 transition-colors\">LinkedIn</a>.",
+  [TranslationKeys.CONTACT_SEND_ANOTHER]: 'Send another message',
   [TranslationKeys.CONTACT_SUBMIT]: 'Send message',
 
   // Footer

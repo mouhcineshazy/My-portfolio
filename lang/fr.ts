@@ -103,10 +103,12 @@ export const fr: Translations = {
   [TranslationKeys.PROJ_1_DESC]: "Site web bilingue de génération de leads pour un courtier en assurance et conseiller en sécurité financière agréé au Québec (AMF) et en Ontario (FSRA). Intègre la réservation Cal.com, une masterclass avec compte à rebours et un SEO optimisé pour l'IA avec des données structurées JSON-LD.",
 
   // Contact
-  [TranslationKeys.CONTACT_INTRO]: `Disponible pour de nouvelles opportunités — contactez-moi à <a href="mailto:soukaki.m@gmail.com" class="text-gray-700 dark:text-gray-300 underline underline-offset-2 decoration-gray-300 dark:decoration-gray-600 hover:decoration-gray-500 transition-colors">soukaki.m@gmail.com</a> ou via le formulaire ci-dessous.`,
+  [TranslationKeys.CONTACT_INTRO]: `Disponible pour des postes senior full-stack (télétravail US · Ottawa), du conseil technique et des projets freelance. Vous recrutez un ingénieur senior, lancez un produit ou avez un projet à concrétiser ? Parlons-en — à <a href="mailto:soukaki.m@gmail.com" class="text-gray-700 dark:text-gray-300 underline underline-offset-2 decoration-gray-300 dark:decoration-gray-600 hover:decoration-gray-500 transition-colors">soukaki.m@gmail.com</a> ou via le formulaire.`,
   [TranslationKeys.CONTACT_EMAIL_PLACEHOLDER]: 'Votre email',
   [TranslationKeys.CONTACT_MESSAGE_PLACEHOLDER]: 'Votre message',
-  [TranslationKeys.CONTACT_SUCCESS]: 'Message envoyé — je vous répondrai dans les plus brefs délais.',
+  [TranslationKeys.CONTACT_SUCCESS_TITLE]: 'Message reçu.',
+  [TranslationKeys.CONTACT_SUCCESS_DESC]: "Je vous répondrai dans les 24 heures. En attendant, n'hésitez pas à me rejoindre sur <a href=\"https://www.linkedin.com/in/mouhcine-soukaki\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-gray-700 dark:text-gray-300 underline underline-offset-2 decoration-gray-300 dark:decoration-gray-600 hover:decoration-gray-500 transition-colors\">LinkedIn</a>.",
+  [TranslationKeys.CONTACT_SEND_ANOTHER]: 'Envoyer un autre message',
   [TranslationKeys.CONTACT_SUBMIT]: 'Envoyer',
 
   // Footer
