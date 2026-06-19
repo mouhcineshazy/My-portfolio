@@ -6,8 +6,9 @@ export const fr: Translations = {
   [TranslationKeys.INTRO_CONTACT_ME]: 'Me contacter',
 
   // Hero
-  [TranslationKeys.INTRO_AVAILABLE]: 'Disponible · Ottawa, ON · Télétravail · EST',
-  [TranslationKeys.INTRO_ROLE]: 'Ingénieur Full Stack Senior',
+  [TranslationKeys.INTRO_AVAILABLE]: 'Disponible · Ottawa, ON · Télétravail · EST · FR/EN',
+  [TranslationKeys.INTRO_ROLE]: 'Ingénieur Full-Stack Indépendant',
+  [TranslationKeys.INTRO_TAGLINE]: 'Rolex · Société Générale · AXA · Natixis — équipes entreprise & projets indépendants',
 
   // Section headings
   [TranslationKeys.SECTION_ABOUT]: 'À propos',

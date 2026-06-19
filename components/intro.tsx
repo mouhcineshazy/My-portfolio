@@ -84,10 +84,18 @@ export default function Intro() {
 
       {/* Role */}
       <motion.p
-        className="text-lg sm:text-xl font-medium text-gray-500 dark:text-gray-400 mb-6 tracking-wide"
+        className="text-lg sm:text-xl font-medium text-gray-500 dark:text-gray-400 mb-2 tracking-wide"
         {...fadeUp(0.15)}
       >
         {intl.formatMessage({ id: TranslationKeys.INTRO_ROLE })}
+      </motion.p>
+
+      {/* Tagline */}
+      <motion.p
+        className="text-[0.8rem] text-gray-400 dark:text-gray-500 mb-6 tracking-wide"
+        {...fadeUp(0.18)}
+      >
+        {intl.formatMessage({ id: TranslationKeys.INTRO_TAGLINE })}
       </motion.p>
 
       {/* Tech stack pills */}
