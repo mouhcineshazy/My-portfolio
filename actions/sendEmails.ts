@@ -5,7 +5,18 @@ import { Resend } from 'resend';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-const buildEmailHtml = (message: string, senderEmail: string) => `
+const escapeHtml = (value: string) =>
+  value
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+
+const buildEmailHtml = (message: string, senderEmail: string) => {
+  const safeMessage = escapeHtml(message);
+  const safeEmail = escapeHtml(senderEmail);
+  return `
 <!DOCTYPE html>
 <html lang="en">
 <head><meta charset="UTF-8" /></head>
@@ -14,14 +25,15 @@ const buildEmailHtml = (message: string, senderEmail: string) => `
     <h2 style="margin:0 0 1.25rem;line-height:1.3;font-size:1.125rem;font-weight:600;color:#111827">
       You received a new message from your portfolio contact form
     </h2>
-    <p style="margin:0 0 1.25rem;line-height:1.7;white-space:pre-wrap;color:#374151">${message}</p>
+    <p style="margin:0 0 1.25rem;line-height:1.7;white-space:pre-wrap;color:#374151">${safeMessage}</p>
     <hr style="border-color:#e5e7eb;margin:1.5rem 0" />
     <p style="margin:0;font-size:0.875rem;color:#6b7280">
-      Reply to: <a href="mailto:${senderEmail}" style="color:#7c3aed;text-decoration:none">${senderEmail}</a>
+      Reply to: <a href="mailto:${safeEmail}" style="color:#7c3aed;text-decoration:none">${safeEmail}</a>
     </p>
   </div>
 </body>
 </html>`;
+};
 
 export const sendEmail = async (formData: FormData) => {
   const senderEmail = formData.get('senderEmail');
