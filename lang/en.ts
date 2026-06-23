@@ -2,7 +2,7 @@ import { TranslationKeys, Translations } from './constants';
 
 export const en: Translations = {
   // CTA buttons
-  [TranslationKeys.INTRO_DOWLOAD_CV]: 'Download CV',
+  [TranslationKeys.INTRO_DOWLOAD_CV]: 'Download Resume',
   [TranslationKeys.INTRO_CONTACT_ME]: 'Contact Me',
 
   // Hero
